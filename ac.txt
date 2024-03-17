@@ -1,0 +1,38 @@
+
+path: 'dashboard', component: PagesComponent
+
+<mat-toolbar>
+  <mat-toolbar-row>
+    <!-- Logo en el lado izquierdo -->
+    <img src="assets/umsa.png" alt="" class="umsa">
+    <!-- Espacio en blanco para separar el logo del texto -->
+    <span class="spacer"></span>
+    <!-- Título centrado -->
+    <span>UNIVERSIDAD MAYOR DE SAN ANDRES</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-drawer-container class="example-container"> 
+  <mat-drawer-content class="drawer-content">
+    <div class="col-md-7 offset-md-4">
+      <div class=" content mat-elevation-z10">
+        <div class="login-container">
+          <h1>ADMINISTRACION DE EMPRESAS</h1>
+          <img src="assets/logo1.png" alt="" class="avatar">
+          <form >
+            <div class="form-group">
+             
+              <input type="text" id="username" name="username" class="form-control" placeholder="Ingrese su usuario">
+            </div>
+            <div class="form-group">
+              
+              <input type="password" id="password" name="password" class="form-control" placeholder="Ingrese su contraseña">
+            </div>
+            <button  class="btn btn-primary" (click)="redirigirdasboard()">Iniciar sesión</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,79 @@
+
+  .content{
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    display: flex;
+    font-size: 2rem;
+    color: lightgrey;
+    padding: 16px;
+    width: 500px;
+    background: linear-gradient(to bottom, #08284d, #460b7e)
+  
+ 
+  }
+  mat-drawer-container{
+    height: calc(100vh - 65px);
+    
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    background: linear-gradient(to bottom right, #03033d, #5c0606);
+}
+
+.login-container {
+  text-align: center;
+  margin-top: 20px; /* Espacio opcional para separar del borde superior */
+  font-size: 3rem; /* Tamaño más grande para el título */
+  margin-bottom: 10px; /* Espacio entre el título y el subtítulo */
+  margin-left: 50px;
+}
+ 
+  
+  
+  .form-group {
+    margin-bottom: 20px; /* Espacio entre los campos de entrada */
+  }
+  
+  .btn-primary {
+    background-color: #1b0752; /* Color oscuro para el fondo del botón */
+    border: 2px solid #1b0752; /* Borde azul oscuro */
+    color: #fff; /* Color blanco para el texto del botón */
+    width: 100%;
+  }
+  
+  .btn-primary:hover {
+    background-color: #020222; /* Cambio de color oscuro cuando el botón está en estado de hover */
+    border-color: #020229; /* Cambio de color del borde al azul oscuro cuando el botón está en estado de hover */
+  }
+  mat-toolbar{
+    background: #180349fa;
+    color: white;
+    border-radius: 1px;
+    display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+}
+
+.avatar {
+  width: 250px; /* Ancho del avatar */
+  margin-bottom: 20px; /* Espacio entre el avatar y los campos de entrada */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3); /* Aplica un efecto de relieve y sombreado */
+  border-radius: 50%; /* Hace que las esquinas sean redondas */
+}
+
+.umsa {
+  height: 40px; /* Ajusta la altura del logo según sea necesario */
+  margin-right: 20px; /* Espacio entre el logo y el texto */
+  border-radius: 8px;
+}
+
+.spacer {
+  flex: 0.5; /* Hace que el espacio en blanco ocupe todo el espacio disponible */
+}
+
+h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega sombreado */
+  color: #dad5d5; /* Color del texto */
+  text-shadow: 5px 1px 2px #000, 0 0 1em #000; /* Agrega relieve */
+}
