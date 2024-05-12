@@ -1,76 +1,76 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
-  mat-drawer-container{
-    height: calc(100vh - 65px);
-    background: #fffdff;
-  }
-  mat-toolbar{
-      background: #340542;
-      color: white;
-      border-radius: 1px;
-  }
-  
-  
-  mat-drawer{
-      margin: 16px;
-      width: 200px;
-      border-right: none;
-      background: #30063d;
-      border-radius: 10px;
-      padding: 16px;  
-      text-align: center;
-  }
-  
-  .content{
-    height: calc(100vh - 98px);
-    
-    border-radius: 10px;
+  flex: 1 1 auto;
+}
+mat-drawer-container{
+  height: calc(100vh - 65px);
+  background: #fffdff;
+}
+mat-toolbar{
+    background: #340542;
+    color: white;
+    border-radius: 1px;
+}
+
+
+mat-drawer{
     margin: 16px;
-    margin-left: 32px;
-    display: flex;
-    font-size: 2rem;
-    color: lightgrey;
-    padding: 16px;
-  }
-  .avatar{
-    margin-top: 16px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-  .name{
-    margin-top: 8px;
-    font-weight: normal;
-    }
-  .tipo{
-    margin-top: 0.5px;
-    font-size: 0.7rem;
-    color: lightgray;
-  }
-  mat-divider {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
+    width: 200px;
+    border-right: none;
+    background: #30063d;
+    border-radius: 10px;
+    padding: 16px;  
+    text-align: center;
+}
+
+.content{
+  height: calc(100vh - 98px);
   
-  .menu-button{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
-    mat-icon, spam, a{
-      margin-right: 10px;
-      color: white;
-    }
-  
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+  display: flex;
+  font-size: 2rem;
+  color: lightgrey;
+  padding: 16px;
+}
+.avatar{
+  margin-top: 16px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.name{
+  margin-top: 8px;
+  font-weight: normal;
   }
-  
-  mat-divider{
-    margin-top: 16px;
-    margin-bottom: 16px;
-    background-color: rgb(218, 33, 135);
+.tipo{
+  margin-top: 0.5px;
+  font-size: 0.7rem;
+  color: lightgray;
+}
+mat-divider {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.menu-button{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+  mat-icon, spam, a{
+    margin-right: 10px;
+    color: white;
   }
-  mat-drawer-content{
-    height: calc(100vh - 65px);
-  }
+
+}
+
+mat-divider{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgb(218, 33, 135);
+}
+mat-drawer-content{
+  height: calc(100vh - 65px);
+}

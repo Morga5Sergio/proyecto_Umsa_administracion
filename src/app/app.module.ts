@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PagesModule } from './pages/pages.module';
-import { PersonalModule } from './personal/personal.module';
+
+
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -17,12 +17,17 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 
-import { RouterModule } from '@angular/router';
+
 import { AuthModule } from './auth/auth.module';
+
+import { RouterModule } from '@angular/router';
+import { PersonalModule } from './personal/personal.module';
+import { PagesModule } from './pages/pages.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,8 +45,8 @@ import { AuthModule } from './auth/auth.module';
     MatSidenavModule,
     MatDividerModule,
     MatButtonModule,
-    RouterModule,
     NgbModule,
+    RouterModule,
 
     
   ],

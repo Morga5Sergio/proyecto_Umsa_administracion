@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth/auth.component';
+
+import { PersonalPerfilComponent } from './personal/personal-perfil/personal-perfil.component';
 import { PagesComponent } from './pages/pages.component';
-import { PagesModule } from './pages/pages.module';
+import { PersonalRegistroComponent } from './personal/personal-registro/personal-registro.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
@@ -10,13 +12,18 @@ const routes: Routes = [
   {path: 'dashboard', component: PagesComponent,
   children:[
     {
-      path: 'personal',
-      loadChildren: () => import('./personal/personal.module').then(m => m.PersonalModule)
+      path: 'personal', loadChildren: () => import('./personal/personal.module').then(m => m.PersonalModule)
     },
     {
+      path: 'personal-perfil', component: PersonalPerfilComponent ,
+    },
+    {
+      path: 'personal-registro', component: PersonalRegistroComponent ,
+    }
+  /*   {
       path: 'personal',
       loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
-    }
+    } */
   ]}
 ];
 

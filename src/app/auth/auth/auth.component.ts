@@ -14,9 +14,11 @@ export class AuthComponent {
   constructor(private router: Router, private authService: AuthService){}
   
   login(): void {
-    this.router.navigate(['/login']);
+/*     this.router.navigate(['/login']); */
     console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-    this.authService.login(this.credentials).subscribe(
+
+    this.router.navigate(['/dashboard']);
+    /*this.authService.login(this.credentials).subscribe(
       (response) => {
         
        console.log('credenciales correctos');
@@ -36,6 +38,6 @@ export class AuthComponent {
       
         // Maneja los errores, por ejemplo, muestra un mensaje de error al usuario.
       }
-    );
+    );*/
   }
 }

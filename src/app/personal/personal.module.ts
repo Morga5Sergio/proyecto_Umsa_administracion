@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PersonalPerfilComponent } from './personal-perfil/personal-perfil.component';
-import { PersonalRegistroComponent } from './personal-registro/personal-registro.component';
 import { PersonalRoutingModule } from './personal-routing.module';
+import { PersonalRegistroComponent } from './personal-registro/personal-registro.component';
+import { PersonalPerfilComponent } from './personal-perfil/personal-perfil.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 
@@ -14,7 +18,11 @@ import { PersonalRoutingModule } from './personal-routing.module';
   imports: [
     CommonModule,
     PersonalRoutingModule,
-    
+    MatFormFieldModule, 
+    MatInputModule,
+    MatNativeDateModule, 
+    MatDatepickerModule
+   
   ]
 })
 export class PersonalModule { }
