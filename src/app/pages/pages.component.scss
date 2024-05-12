@@ -1,3 +1,5 @@
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -21,14 +23,14 @@ mat-drawer{
     padding: 16px;  
     text-align: center;
 }
-
+/* display: flex; */
 .content{
   height: calc(100vh - 98px);
-  
+  width: 96%;
   border-radius: 10px;
   margin: 16px;
   margin-left: 32px;
-  display: flex;
+
   font-size: 2rem;
   color: lightgrey;
   padding: 16px;

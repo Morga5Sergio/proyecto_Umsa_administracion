@@ -17,7 +17,6 @@
       <button mat-button class="menu-button">
         <mat-icon>face</mat-icon> 
         <span><a [routerLink]="['/dashboard/personal-perfil']">PERFIL</a></span>
-
       </button>
       <button mat-button class="menu-button">
         <mat-icon>list</mat-icon> 
@@ -29,9 +28,9 @@
         <span>SALIR</span> 
       </button>
   </mat-drawer>
+
   <mat-drawer-content>
-    <div class=" content mat-elevation-z8">
-    
+    <div class="content mat-elevation-z8">
       <router-outlet></router-outlet>
     </div>
   </mat-drawer-content>

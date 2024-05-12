@@ -10,6 +10,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { AuthModule } from '../auth/auth.module';
 import { RouterModule } from '@angular/router';
+import { MatTableModule } from '@angular/material/table';
+
 
 
 
@@ -27,8 +29,8 @@ import { RouterModule } from '@angular/router';
     MatDividerModule,
     MatButtonModule,
     AuthModule,
-    RouterModule
-    
+    RouterModule,
+    MatTableModule
   ]
 })
 export class PagesModule { }

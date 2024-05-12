@@ -17,17 +17,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 
-
 import { AuthModule } from './auth/auth.module';
-
 import { RouterModule } from '@angular/router';
 import { PersonalModule } from './personal/personal.module';
 import { PagesModule } from './pages/pages.module';
 
-
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +43,7 @@ import { PagesModule } from './pages/pages.module';
     MatDividerModule,
     MatButtonModule,
     NgbModule,
-    RouterModule,
-
-    
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
