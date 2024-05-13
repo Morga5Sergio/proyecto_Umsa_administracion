@@ -5,6 +5,7 @@ import { AuthComponent } from './auth/auth/auth.component';
 import { PersonalPerfilComponent } from './personal/personal-perfil/personal-perfil.component';
 import { PagesComponent } from './pages/pages.component';
 import { PersonalRegistroComponent } from './personal/personal-registro/personal-registro.component';
+import { ReporteVeranoComponent } from './reporte-verano/reporte-verano.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
@@ -19,7 +20,10 @@ const routes: Routes = [
     },
     {
       path: 'personal-registro', component: PersonalRegistroComponent ,
-    }
+    },
+    {
+      path: 'reporte-verano', component: ReporteVeranoComponent,
+    },
   /*   {
       path: 'personal',
       loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)

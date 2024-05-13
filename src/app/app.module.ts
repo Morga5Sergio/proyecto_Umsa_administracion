@@ -21,10 +21,16 @@ import { AuthModule } from './auth/auth.module';
 import { RouterModule } from '@angular/router';
 import { PersonalModule } from './personal/personal.module';
 import { PagesModule } from './pages/pages.module';
+import { ReporteVeranoComponent } from './reporte-verano/reporte-verano.component';
+import { ReporteMensualComponent } from './reporte-mensual/reporte-mensual.component';
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+//import pdfFonts from 'pdfmake/build/vfs_fonts';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReporteVeranoComponent,
+    ReporteMensualComponent,
   ],
   imports: [
     BrowserModule,
