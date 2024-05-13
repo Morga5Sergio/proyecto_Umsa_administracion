@@ -3,14 +3,15 @@ import { Component } from '@angular/core';
 import { PdfMakeWrapper, Txt } from 'pdfmake-wrapper';
 
 import * as pdfMake from 'pdfmake/build/pdfmake';
-import * as pdfFonts from 'pdfMake/build/vfs_fonts';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+// import * as pdfFonts from 'pdfMake/build/vfs_fonts';
 
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
   selector: 'app-reporte-verano',
   templateUrl: './reporte-verano.component.html',
-  styleUrls: ['./reporte-verano.component.scss'],
+  styleUrls: ['./reporte-verano.component.scss']
 })
 export class ReporteVeranoComponent {
   pdfData: any;
