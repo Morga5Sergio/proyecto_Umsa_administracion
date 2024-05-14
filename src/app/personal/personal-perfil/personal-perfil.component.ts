@@ -29,40 +29,40 @@ export class PersonalPerfilComponent implements AfterViewInit {
 export interface PeriodicElement {
   name: string;
   position: number;
-  weight: number;
+  weight: String;
   symbol: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 4, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 5, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 6, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 7, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 8, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 9, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 10, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 4, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 5, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 6, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 7, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 8, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 9, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 10, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 4, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 5, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 6, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 7, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 8, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 9, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 10, name: 'Helium', weight: 4.0026, symbol: 'He'}
+  {position: 1, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 2, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 3, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 4, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 5, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 6, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 7, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 8, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 9, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 10, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 1, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 2, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 3, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 4, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 5, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 6, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 7, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 8, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 9, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 10, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 1, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 2, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 3, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 4, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 5, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 6, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 7, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 8, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 9, name: '23-05-2023', weight: "Martes", symbol: '10:30'},
+  {position: 10, name: '23-05-2023', weight: "Martes", symbol: '10:30'}
   // Otros datos aquí
 ];
