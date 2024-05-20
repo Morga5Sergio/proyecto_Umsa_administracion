@@ -9,7 +9,6 @@
     </section> 
 </section>
 
-<section>
 
 <section style="width: 100% !important;">
     <mat-card style=" background-color: rgb(250, 249, 249); padding-bottom: 7px; padding-left: 5px;">
@@ -18,18 +17,18 @@
                 <span style="color: black; text-align: left; font-size: 1.2rem;"> Docente: &nbsp; </span>
             </section> 
             <section style="display: inline-block;" >
-                <span style="color: black; text-align: left; font-size: 1.2rem;"> Ingresa el nombre </span>
+                <span style="color: black; text-align: left; font-size: 1.2rem;"> RIOS </span>
             </section> 
         </section>
         
-        <section style="width: 95% !important; display: inline-block;" >
+        <!-- <section style="width: 95% !important; display: inline-block;" >
             <section style="display: inline-block;">
                 <span style="color: black; text-align: left; font-size: 1.2rem;"> Nombre Apellido: &nbsp; </span>
             </section> 
             <section style="display: inline-block;" >
-                <span style="color: black; text-align: left; font-size: 1.2rem;"> Sergio Gary </span>
+                <span style="color: black; text-align: left; font-size: 1.2rem;"> RIOS </span>
             </section> 
-        </section>
+        </section> -->
     </mat-card>
 </section>
 
@@ -92,29 +91,59 @@
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!-- Position Column -->
-        <ng-container matColumnDef="position">
+        <ng-container matColumnDef="cnt">
           <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.cnt}} </td>
         </ng-container>
-      
+
         <!-- Name Column -->
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Fecha </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
       
         <!-- Weight Column -->
-        <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef> Dia </th>
-          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+        <ng-container matColumnDef="dia">
+            <th mat-header-cell *matHeaderCellDef> Dia </th>
+            <td mat-cell *matCellDef="let element"> {{element.dia}} </td>
         </ng-container>
-      
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="symbol">
-          <th mat-header-cell *matHeaderCellDef> Hora Ingreso </th>
-          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+
+         <!-- Symbol Column -->
+        <ng-container matColumnDef="hrIngreso">
+            <th mat-header-cell *matHeaderCellDef> Hora Ingreso </th>
+            <td mat-cell *matCellDef="let element"> {{element.hroIngreso}} </td>
         </ng-container>
-      
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="hrSalida">
+            <th mat-header-cell *matHeaderCellDef> Hora Salida </th>
+            <td mat-cell *matCellDef="let element"> {{element.hroSalida}} </td>
+        </ng-container>
+         <!-- Symbol Column -->
+         <ng-container matColumnDef="hrMarcadoIng">
+            <th mat-header-cell *matHeaderCellDef matTooltip="sdfdsfsd"> Ingr. Marca. </th>
+            <td mat-cell *matCellDef="let element"> {{element.hroMarcadoIngreso}} </td>
+         </ng-container>
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="hrMarcadoSlda">
+            <th mat-header-cell *matHeaderCellDef> Salida Marca. </th>
+            <td mat-cell *matCellDef="let element"> {{element.hroMarcadoSalida}} </td>
+        </ng-container>
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef> tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+        </ng-container>
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="materia">
+            <th mat-header-cell *matHeaderCellDef> Materia. </th>
+            <td mat-cell *matCellDef="let element"> {{element.materia}} </td>
+        </ng-container>
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="minutoAtraso">
+            <th mat-header-cell *matHeaderCellDef> Mint. atraso </th>
+            <td mat-cell *matCellDef="let element"> {{element.minutoAtraso}} </td>
+        </ng-container>
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
@@ -122,9 +151,59 @@
       <!-- Paginator -->
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
     
-    
 </section>
 
+
+<section style="width: 100% !important; display: inline-block; text-align: center;"  >
+        
+    <!-- <section style="width: 50% !important; display: inline-block; text-align: center; background-color: yellow;">
+        <h2> Descripcion General</h2>
+    </section> -->
+
+    <mat-card style="width: 40%; margin: 0 auto;">
+        <!-- <mat-card-content>Simple card</mat-card-content> -->
+        <!-- <section style="width: 100%;">
+            <section style="width: 80%; display: inline-block;"><h3>holadf</h3></section>
+            <section style="width: 20%; display: inline-block;"><h3>32</h3></section>
+        </section> -->
+        <table mat-table [dataSource]="dataSourceDescrip" class="mat-elevation-z8">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="descrip">
+              <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+              <td mat-cell *matCellDef="let elemntDescripcion"> {{elemntDescripcion.descrip}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="total">
+              <th mat-header-cell *matHeaderCellDef style="text-align: right;"> Total </th>
+              <td mat-cell *matCellDef="let elemntDescripcion"  style="text-align: right;"> {{elemntDescripcion.total}} </td>
+            </ng-container>
+          
+           
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsDescrip"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsDescrip;"></tr>
+        </table>
+          <!-- <section style="width: 100%">
+            <section style="width: 80%; display: inline-block;">
+                <mat-list role="list">
+                    <mat-list-item role="listitem" style="text-align: left; color: green important!;">Atrasos</mat-list-item>
+                    <mat-list-item role="listitem" style="text-align: left;">Abandonos</mat-list-item>
+                    <mat-list-item role="listitem" style="text-align: left;"    >Faltas</mat-list-item>
+                </mat-list>
+            </section>
+            <section style="width: 20%; display: inline-block;">
+                <mat-list role="list">
+                    <mat-list-item role="listitem">10</mat-list-item>
+                    <mat-list-item role="listitem">20</mat-list-item>
+                    <mat-list-item role="listitem">30</mat-list-item>
+                </mat-list>
+            </section>
+          </section> -->
+          
+    </mat-card>
+</section>
 <!-- [(ngModel)] = "filterNombre" -->
 <!-- <mat-form-field appearance="fill" style="width: 100%; display: inline-block;">
     <mat-label> Filtro</mat-label>
