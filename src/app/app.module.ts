@@ -1,22 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-
-
 import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
-
 import { AuthModule } from './auth/auth.module';
 import { RouterModule } from '@angular/router';
 import { PersonalModule } from './personal/personal.module';
@@ -24,6 +18,9 @@ import { PagesModule } from './pages/pages.module';
 import { ReporteVeranoComponent } from './reporte-verano/reporte-verano.component';
 import { ReporteMensualComponent } from './reporte-mensual/reporte-mensual.component';
 import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import { ListaAdministracionComponent } from './administracion/lista-administracion/lista-administracion.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTableModule } from '@angular/material/table';
 //import pdfFonts from 'pdfmake/build/vfs_fonts';
 
 @NgModule({
@@ -31,6 +28,7 @@ import { PdfMakeWrapper } from 'pdfmake-wrapper';
     AppComponent,
     ReporteVeranoComponent,
     ReporteMensualComponent,
+    ListaAdministracionComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +47,9 @@ import { PdfMakeWrapper } from 'pdfmake-wrapper';
     MatDividerModule,
     MatButtonModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    MatCheckboxModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

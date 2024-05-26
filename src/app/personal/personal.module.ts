@@ -14,6 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatPaginatorModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ]
 })
 export class PersonalModule { }

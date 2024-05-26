@@ -6,6 +6,7 @@ import { PersonalPerfilComponent } from './personal/personal-perfil/personal-per
 import { PagesComponent } from './pages/pages.component';
 import { PersonalRegistroComponent } from './personal/personal-registro/personal-registro.component';
 import { ReporteVeranoComponent } from './reporte-verano/reporte-verano.component';
+import { ListaAdministracionComponent } from './administracion/lista-administracion/lista-administracion.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
@@ -14,6 +15,9 @@ const routes: Routes = [
   children:[
     {
       path: 'personal', loadChildren: () => import('./personal/personal.module').then(m => m.PersonalModule)
+    },
+    {
+      path: 'administracion-lista', component: ListaAdministracionComponent , 
     },
     {
       path: 'personal-perfil', component: PersonalPerfilComponent ,
