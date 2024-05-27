@@ -15,12 +15,11 @@ import { AuthModule } from './auth/auth.module';
 import { RouterModule } from '@angular/router';
 import { PersonalModule } from './personal/personal.module';
 import { PagesModule } from './pages/pages.module';
-import { ReporteVeranoComponent } from './reporte-verano/reporte-verano.component';
-import { ReporteMensualComponent } from './reporte-mensual/reporte-mensual.component';
-import { PdfMakeWrapper } from 'pdfmake-wrapper';
+
 import { ListaAdministracionComponent } from './administracion/lista-administracion/lista-administracion.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
+
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -32,8 +31,6 @@ import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
-    ReporteVeranoComponent,
-    ReporteMensualComponent,
     ListaAdministracionComponent,
   ],
   imports: [
