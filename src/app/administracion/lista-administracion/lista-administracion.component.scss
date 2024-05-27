@@ -1,3 +1,22 @@
 table {
     width: 100%;
-  }
+}
+/* Section Titulo */
+.sectionFather{
+    width: 100% !important; 
+    display: inline-block; 
+}
+#titleAdministracion{
+    width: 90%; 
+    display: inline-block;
+}
+#srtFecha{
+    width: 10%;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+/* Color Boton*/
+#buttonBuscarAnadir{
+    background-color: rgb(92, 14, 165);
+}

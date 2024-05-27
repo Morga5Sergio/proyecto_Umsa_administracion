@@ -1,50 +1,193 @@
 <!-- <p>lista-administracion works!</p> -->
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<section class="sectionFather" >
+    <section id="titleAdministracion">
+        <h1 style="color: black; text-align: center;"> CARRERA ADMINISTRACION DE EMPRESAS </h1>
+    </section> 
+    <section id="srtFecha">
+        Fecha Hoy
+    </section> 
+</section>
 
-    <!-- Checkbox Column -->
-    <ng-container matColumnDef="select">
-      <th mat-header-cell *matHeaderCellDef>
-        <mat-checkbox (change)="$event ? toggleAllRows() : null"
-                      [checked]="selection.hasValue() && isAllSelected()"
-                      [indeterminate]="selection.hasValue() && !isAllSelected()"
-                      [aria-label]="checkboxLabel()">
-        </mat-checkbox>
-      </th>
-      <td mat-cell *matCellDef="let row">
-        <mat-checkbox (click)="$event.stopPropagation()"
-                      (change)="$event ? selection.toggle(row) : null"
-                      [checked]="selection.isSelected(row)"
-                      [aria-label]="checkboxLabel(row)">
-        </mat-checkbox>
-      </td>
-    </ng-container>
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-        (click)="selection.toggle(row)">
-    </tr>
-  </table>
+<section style="width: 100% !important; display: inline-block; display: flex; justify-content: center; align-items: center;" >
+  <section style="width: 50% !important; display: inline-block; vertical-align: middle; justify-content: right !important; text-align: right; "  >
+        <button type="button" class="btn btn-primary" id="buttonBuscarAnadir" (click)="listDocenteVisibility()"> 
+            <mat-icon style="vertical-align: middle;">search</mat-icon> 
+            Buscar
+        </button>
+  </section>
+  <section style="width: 50% !important; display: inline-block; vertical-align: 6px;"  >  
+    <button type="button" class="btn btn-primary" id="buttonBuscarAnadir">
+        <mat-icon style="vertical-align: middle;">person_add</mat-icon>
+        Actualizar
+    </button>
+  </section>
+</section>
+
+<section style="margin-top: 0.5em;">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="docente">
+          <th mat-header-cell *matHeaderCellDef> Docente </th>
+          <td mat-cell *matCellDef="let element"> {{element.docente}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="cantidad_materias">
+          <th mat-header-cell *matHeaderCellDef> Cantidad materias </th>
+          <td mat-cell *matCellDef="let element"> {{element.cantidad_materia}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="selection.toggle(row)">
+        </tr>
+      </table>
+      <mat-paginator #paginator1 [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</section>
+
+
+<section style="width: 100% !important; padding-top: 10px; " *ngIf="swisVisible">
+    <section style="width: 20% !important; display: inline-block; vertical-align: middle;" >
+        <mat-form-field>
+            <mat-label>Fecha Inicio</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </section>
+    
+    <section style="width: 20% !important; display: inline-block; vertical-align: middle;" >
+        <mat-form-field>
+            <mat-label>Fecha Fin</mat-label>
+            <input matInput [matDatepicker]="picker2">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+    </section>
+
+    <section style="width: 20% !important; display: inline-block; vertical-align: middle;"  >
+        <mat-form-field style="width: 90%" color="primary" >
+            <mat-label>Select</mat-label>
+            <mat-select >
+              <mat-option value="one">TODOS</mat-option>
+              <mat-option value="two">ATRASOS</mat-option>
+              <mat-option value="two">ABANDONOS</mat-option>
+              <mat-option value="two">LICENCIAS</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </section>
+
+    <section style="width: 20% !important; display: inline-block; vertical-align: middle;"  >
+        <mat-form-field style="width: 80% ">
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option value="one">MATERIAS</mat-option>
+              <mat-option value="two">M1</mat-option>
+              <mat-option value="two">M2</mat-option>
+              <mat-option value="two">m3</mat-option>
+              <mat-option value="two">M1</mat-option>
+              <mat-option value="two">M2</mat-option>
+              <mat-option value="two">m3</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </section>
+
+    <section style="width: 10% !important; display: inline-block; vertical-align: middle; vertical-align: 6px;"   >
+        <button type="button" class="btn btn-primary" style="background-color: rgb(92, 14, 165);">Buscar</button>
+        
+    </section>
+    <section style="width: 10% !important; display: inline-block; vertical-align: 6px;"  >
+        <button type="button" class="btn btn-primary" style="background-color: rgb(92, 14, 165);">Limpiar</button>
+    </section>
+
+    <table mat-table [dataSource]="dataSourceDocente" class="mat-elevation-z8">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="cnt">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.cnt}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="dia">
+            <th mat-header-cell *matHeaderCellDef> Dia </th>
+            <td mat-cell *matCellDef="let element"> {{element.dia}} </td>
+        </ng-container>
+
+         <!-- Symbol Column -->
+        <ng-container matColumnDef="hrIngreso">
+            <th mat-header-cell *matHeaderCellDef> Hora Ingreso </th>
+            <td mat-cell *matCellDef="let element"> {{element.hroIngreso}} </td>
+        </ng-container>
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="hrSalida">
+            <th mat-header-cell *matHeaderCellDef> Hora Salida </th>
+            <td mat-cell *matCellDef="let element"> {{element.hroSalida}} </td>
+        </ng-container>
+         <!-- Symbol Column -->
+         <ng-container matColumnDef="hrMarcadoIng">
+            <th mat-header-cell *matHeaderCellDef matTooltip="sdfdsfsd"> Ingr. Marca. </th>
+            <td mat-cell *matCellDef="let element"> {{element.hroMarcadoIngreso}} </td>
+         </ng-container>
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="hrMarcadoSlda">
+            <th mat-header-cell *matHeaderCellDef> Salida Marca. </th>
+            <td mat-cell *matCellDef="let element"> {{element.hroMarcadoSalida}} </td>
+        </ng-container>
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef> tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+        </ng-container>
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="materia">
+            <th mat-header-cell *matHeaderCellDef> Materia. </th>
+            <td mat-cell *matCellDef="let element"> {{element.materia}} </td>
+        </ng-container>
+        <!-- hrIngreso -->
+        <ng-container matColumnDef="minutoAtraso">
+            <th mat-header-cell *matHeaderCellDef> Mint. atraso </th>
+            <td mat-cell *matCellDef="let element"> {{element.minutoAtraso}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsDocente"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsDocente;"></tr>
+      </table>
+      
+      <!-- Paginator -->
+      <mat-paginator #paginator2 [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+    
+</section>

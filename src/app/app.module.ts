@@ -21,6 +21,12 @@ import { PdfMakeWrapper } from 'pdfmake-wrapper';
 import { ListaAdministracionComponent } from './administracion/lista-administracion/lista-administracion.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 //import pdfFonts from 'pdfmake/build/vfs_fonts';
 
 @NgModule({
@@ -49,7 +55,12 @@ import { MatTableModule } from '@angular/material/table';
     NgbModule,
     RouterModule,
     MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth/auth.component';
-
 import { PersonalPerfilComponent } from './personal/personal-perfil/personal-perfil.component';
 import { PagesComponent } from './pages/pages.component';
 import { PersonalRegistroComponent } from './personal/personal-registro/personal-registro.component';

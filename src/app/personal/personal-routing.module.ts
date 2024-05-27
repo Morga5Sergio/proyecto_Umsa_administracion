@@ -5,7 +5,7 @@ import { ListaAdministracionComponent } from '../administracion/lista-administra
 
 
 const routes: Routes = [
-  {path: 'personal', component: PersonalPerfilComponent},
+  {path: 'personal', component: ListaAdministracionComponent},
   {path: 'personal-perfil', component: PersonalPerfilComponent},
   {path: 'administracion-perfil', component: ListaAdministracionComponent},
 ];
