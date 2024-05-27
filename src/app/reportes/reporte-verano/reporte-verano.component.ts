@@ -38,23 +38,23 @@ export class ReporteVeranoComponent {
 
   cargarAsistencia(){
     this.listaAsistenciaVerano=[
-      {cnt:1,nombre:'ROLANDO JESUS MAGNE SINGURI', fecha:new Date(), 
+      {cnt:1,nombre:'ROLANDO JESUS MAGNE SINGURI', fecha:'20/15/2020', 
       horaIngreso:'3:20:44 PM', horaSalida:'7:02:55 PM', minutosAtraso:'0:00:00',cargaHoraria:'FALTA 56:21', observaciones:'LICENCIA CENA'},
-      {cnt: '2',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '3',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '4',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '5',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '6',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '7',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '8',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '9',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '10',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '11',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '12',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
-      {cnt: '13',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: new Date(),horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', 
+      {cnt: '2',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '3',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '4',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '5',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '6',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '7',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '8',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '9',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '10',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '11',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '12',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
+      {cnt: '13',nombre: 'ROLANDO JESUS MAGNE SINGURI',fecha: '20/15/2020',horaIngreso: '3:22:44 PM',horaSalida: '7:02:55 PM', 
       minutosAtraso: '0:00:00',cargaHoraria: 'FALTA 00:31:20',observaciones: 'RECUPERAR 3:21:22 HRS.'},
     ];
-    
+
     //esto no se modifica
     this.dataLista = this.listaAsistenciaVerano.map(item => [
       item.nombre, 
@@ -76,7 +76,7 @@ export class ReporteVeranoComponent {
     pdfMaker.add(pdfMaker.ln(1));
     pdfMaker.add(new Txt('CARRERA DE ADMINISTRACIÓN DE EMPRESAS').alignment('center').bold().end);
     pdfMaker.add(pdfMaker.ln(1));
-    pdfMaker.add(new Txt('ASISTENCIA DE CURSO DE VERANO '+this.gestionInicio+' - '+this.gestionFin).alignment('center').end);
+    pdfMaker.add(new Txt('ASISTENCIA DE CURSO DE VERANO '+this.gestionInicio+' - '+this.gestionFin+' PREDIO '+this.predioSeleccionado).alignment('center').end);
     pdfMaker.add(new Txt('CURSO DE VERANO ').alignment('center').lineHeight(1).end);
     pdfMaker.add(pdfMaker.ln(1));
     pdfMaker.add(new Txt('Hora de ingreso: '+this.horarioSeleccionado).fontSize(10).alignment('left').end);
