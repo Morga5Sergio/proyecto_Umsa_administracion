@@ -1,7 +1,8 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { AfterViewInit, Component, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, SimpleChanges, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-lista-administracion',
@@ -11,12 +12,17 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ListaAdministracionComponent implements AfterViewInit {
   
   swisVisible = false;
+  /*Seccion Uno */ 
   displayedColumns: string[] = ['select', 'position', 'docente', 'cantidad_materias'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
 
+  // Seccion buscador docentes, 
+  displayedColumnsDocente: string[] = ['cnt', 'name', 'dia', 'hrIngreso','hrSalida','hrMarcadoIng','hrMarcadoSlda','tipo','materia','minutoAtraso'];
+  dataSourceDocente = new MatTableDataSource<Docente>(ELEMENT_DATA_DOCENTE);
+
   @ViewChild('paginator1', { static: true }) paginator?: MatPaginator;
-  @ViewChild('paginator2', { static: true }) paginator2?: MatPaginator;
+  @ViewChild('paginator2') paginator2?: MatPaginator;
 
 
   ngAfterViewInit(): void {
@@ -35,15 +41,66 @@ export class ListaAdministracionComponent implements AfterViewInit {
     }
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log("Entra aqui");
-    if (changes['data']) {
-      const change = changes['data'];
-      console.log('Previous value:', change.previousValue);
-      console.log('Current value:', change.currentValue);
-      console.log('First change:', change.firstChange);
-    }
+  
+  constructor(private cdr: ChangeDetectorRef, private authService: AuthService) {
 
+   }
+  ngAfterViewChecked() {
+    if (this.swisVisible && this.paginator2 && !this.dataSourceDocente.paginator) {
+      this.dataSourceDocente.paginator = this.paginator2;
+      this.cdr.detectChanges(); // Forzar la detección de cambios
+    }
+  }
+  listDocenteVisibility(){
+    this.swisVisible = !this.swisVisible;
+    this.cdr.detectChanges();
+    this.initPaginator2();
+
+
+    console.log('Selected elements:', this.selection.selected);
+    /* this.selection.isSelected
+    console.log("Seleccionado ==> " ,  this.selection.isSelected); */
+    // this.ELEMENT_DATA2 = this.selection.isSelected;
+    /* this.authService.isPokemon().subscribe(
+      (response) => {
+        console.log("Entra Aqui");
+        console.log(response);
+      }
+    ); */
+
+    this.authService.isExamplePost({title:"foo", body:"bar", userId:1}).subscribe(
+      (response) => {
+        console.log("Entra Aqui");
+        console.log(response);
+      }
+    );
+    /* if (this.paginator2) {
+      this.dataSourceDocente.paginator = this.paginator2;
+      console.log("Ingresa Aqui");
+    }else {
+      console.log("Ingresa Aqui false");
+    } */
+  }
+
+  masterToggle() {
+    this.isAllSelected() ?
+      this.selection.clear() :
+      this.dataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  onRowCheckboxChange(row: PeriodicElement) {
+    this.selection.toggle(row);
+  }
+
+
+  async initPaginator2() {
+    console.log("Resuelve ==> " + this.paginator2)
+    while (!this.paginator2) {
+      await new Promise(resolve => setTimeout(resolve, 100)); // Espera 100ms y reintenta
+    }
+    this.dataSourceDocente.paginator = this.paginator2;
+    this.cdr.detectChanges(); // Forzar la detección de cambios después de asignar el paginador
+    console.log("Asignado paginador2");
   }
   ngOnInit() {
     // this.dataSource.paginator = this.paginator;
@@ -72,21 +129,10 @@ export class ListaAdministracionComponent implements AfterViewInit {
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
 
-  // Seccion buscador docentes, 
-  displayedColumnsDocente: string[] = ['cnt', 'name', 'dia', 'hrIngreso','hrSalida','hrMarcadoIng','hrMarcadoSlda','tipo','materia','minutoAtraso'];
-  dataSourceDocente = new MatTableDataSource<Docente>(ELEMENT_DATA_DOCENTE);
+  ELEMENT_DATA2: PeriodicElement[] = [];
+  
 
-  listDocenteVisibility(){
-    this.swisVisible = !this.swisVisible;
-
-
-    if (this.paginator2) {
-      this.dataSourceDocente.paginator = this.paginator2;
-      console.log("Ingresa Aqui");
-    }else {
-      console.log("Ingresa Aqui false");
-    }
-  }
+  
 
 }
 

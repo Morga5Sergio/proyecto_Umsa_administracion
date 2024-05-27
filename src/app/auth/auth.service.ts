@@ -10,12 +10,25 @@ import { tap, catchError } from 'rxjs/operators';
 // --------------------------
 export class AuthService {
   private apiUrl = 'http://localhost:5000';
- 
+  private apiPokemon = "https://pokeapi.co/api/v2/pokemon/ditto"
+  //private apiPokemon = "https://jsonplaceholder.typicode.com/todos/1"
+  private apipostExample = "https://jsonplaceholder.typicode.com/posts"
   constructor(private http: HttpClient) {}
 
   login(credentials: { username: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, credentials);
   }
+
+  isPokemon(): Observable<any>{
+    return this.http.get(`${this.apiPokemon}`);
+  }
+  /* title: 'foo',
+    body: 'bar',
+    userId: 1, */
+  isExamplePost(enviar: {title: string; body:string; userId: number }): Observable<any>{
+    return this.http.post(`${this.apipostExample}`, enviar );
+  }
+
 
   // Método para obtener datos de estudiantes después de iniciar sesión
   getStudentData(): Observable<any> {
@@ -70,4 +83,5 @@ export class AuthService {
     return !!localStorage.getItem('access_token');
   }
 
+ 
 }
