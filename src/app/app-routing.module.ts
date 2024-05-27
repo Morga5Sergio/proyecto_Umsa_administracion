@@ -5,7 +5,7 @@ import { AuthComponent } from './auth/auth/auth.component';
 import { PersonalPerfilComponent } from './personal/personal-perfil/personal-perfil.component';
 import { PagesComponent } from './pages/pages.component';
 import { PersonalRegistroComponent } from './personal/personal-registro/personal-registro.component';
-import { ReporteVeranoComponent } from './reporte-verano/reporte-verano.component';
+
 import { ListaAdministracionComponent } from './administracion/lista-administracion/lista-administracion.component';
 
 const routes: Routes = [
@@ -17,6 +17,10 @@ const routes: Routes = [
       path: 'personal', loadChildren: () => import('./personal/personal.module').then(m => m.PersonalModule)
     },
     {
+      path: 'reporte', 
+      loadChildren: () => import('./reportes/reporte-routing.module').then(m => m.ReporteRoutingModule)
+    },
+    {
       path: 'administracion-lista', component: ListaAdministracionComponent , 
     },
     {
@@ -25,9 +29,7 @@ const routes: Routes = [
     {
       path: 'personal-registro', component: PersonalRegistroComponent ,
     },
-    {
-      path: 'reporte-verano', component: ReporteVeranoComponent,
-    },
+    
   /*   {
       path: 'personal',
       loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)

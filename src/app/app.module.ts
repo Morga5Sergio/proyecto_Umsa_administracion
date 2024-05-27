@@ -15,19 +15,14 @@ import { AuthModule } from './auth/auth.module';
 import { RouterModule } from '@angular/router';
 import { PersonalModule } from './personal/personal.module';
 import { PagesModule } from './pages/pages.module';
-import { ReporteVeranoComponent } from './reporte-verano/reporte-verano.component';
-import { ReporteMensualComponent } from './reporte-mensual/reporte-mensual.component';
-import { PdfMakeWrapper } from 'pdfmake-wrapper';
+
 import { ListaAdministracionComponent } from './administracion/lista-administracion/lista-administracion.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
-//import pdfFonts from 'pdfmake/build/vfs_fonts';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReporteVeranoComponent,
-    ReporteMensualComponent,
     ListaAdministracionComponent,
   ],
   imports: [
