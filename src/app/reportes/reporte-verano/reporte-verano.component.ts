@@ -23,6 +23,7 @@ export class ReporteVeranoComponent {
   columnHeaders = ['Nombre', 'Fecha','Ingreso Turno', 'Salida Turno', 'Atraso', 'Cumplimiento de carga horaria', 'Observaciones'];
   dataLista?: any;
   dataObservaciones?: any;
+  
   ngOnInit() {
     //cargar lista asistencia
     this.cargarAsistencia();
@@ -72,7 +73,7 @@ export class ReporteVeranoComponent {
     pdfMaker.add(new Columns([
       new Txt('Del '+this.fechaInicio+' al '+this.fechaFin+'. ').alignment('left').fontSize(10).end,
       new Txt('Anexo 1').alignment('right').fontSize(10).end
-  ]).end);
+    ]).end);
     pdfMaker.add(pdfMaker.ln(1));
     pdfMaker.add(new Txt('CARRERA DE ADMINISTRACIÓN DE EMPRESAS').alignment('center').bold().end);
     pdfMaker.add(pdfMaker.ln(1));
