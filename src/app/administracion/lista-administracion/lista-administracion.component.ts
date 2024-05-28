@@ -17,6 +17,7 @@ export class ListaAdministracionComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
 
+  arrPokemon: string[];
   // Seccion buscador docentes, 
   displayedColumnsDocente: string[] = ['cnt', 'name', 'dia', 'hrIngreso','hrSalida','hrMarcadoIng','hrMarcadoSlda','tipo','materia','minutoAtraso'];
   dataSourceDocente = new MatTableDataSource<Docente>(ELEMENT_DATA_DOCENTE);
@@ -43,7 +44,7 @@ export class ListaAdministracionComponent implements AfterViewInit {
 
   
   constructor(private cdr: ChangeDetectorRef, private authService: AuthService) {
-
+      this.arrPokemon = [];
    }
   ngAfterViewChecked() {
     if (this.swisVisible && this.paginator2 && !this.dataSourceDocente.paginator) {
@@ -51,7 +52,9 @@ export class ListaAdministracionComponent implements AfterViewInit {
       this.cdr.detectChanges(); // Forzar la detección de cambios
     }
   }
+
   listDocenteVisibility(){
+    // Una validacion, que cuando lo check esten vacion tiene que seguir no visible
     this.swisVisible = !this.swisVisible;
     this.cdr.detectChanges();
     this.initPaginator2();
@@ -67,11 +70,20 @@ export class ListaAdministracionComponent implements AfterViewInit {
         console.log(response);
       }
     ); */
-
+/* 
     this.authService.isExamplePost({title:"foo", body:"bar", userId:1}).subscribe(
       (response) => {
-        console.log("Entra Aqui");
+        console.log("Entra Aqui - Maribel");
         console.log(response);
+      }
+    ); */
+
+    this.authService.isPokemon().subscribe(
+      (response) => {
+        console.log("Entra Aqui - Maribel - GET Pokemon");
+        console.log(response);
+        // this.dataSourceDocente = response 
+         // this.arrPokemon =  response;
       }
     );
     /* if (this.paginator2) {
