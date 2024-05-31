@@ -34,7 +34,26 @@
   .form-group {
     margin-bottom: 20px; /* Espacio entre los campos de entrada */
   }
-  
+  #radio-group{
+    color: #3e3d3d;
+    padding-top: 10px;
+    margin-bottom: 20px; /* Espacio entre los campos de entrada */
+    background-color: #ece9e9;
+    vertical-align: 10px;
+  }
+  #txtSelection{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 15px !important; 
+    margin-top: 5px;
+  }
+  #txtSelection1{
+    text-align: left;
+    color: #d24949;
+    margin-left: 10px;
+    font-size: 12px !important; 
+    
+  }
   .btn-primary {
     background-color: #1b0752; /* Color oscuro para el fondo del botón */
     border: 2px solid #1b0752; /* Borde azul oscuro */

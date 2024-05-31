@@ -10,7 +10,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-
+import { MatRadioModule } from '@angular/material/radio';
+import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AuthComponent
@@ -23,7 +25,10 @@ import { FormsModule } from '@angular/forms';
     MatSidenavModule,
     MatDividerModule,
     MatButtonModule,
-    MatInputModule // ---ver mensaje x si las credenciales estan mal 
+    MatInputModule, // ---ver mensaje x si las credenciales estan mal 
+    MatRadioModule,
+    ToastrModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers:[AuthService],
   

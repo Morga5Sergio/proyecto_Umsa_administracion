@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { AuthModule } from '../auth/auth.module';
 import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 
@@ -30,7 +31,8 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     AuthModule,
     RouterModule,
-    MatTableModule
+    MatTableModule,
+    MatRadioModule
   ]
 })
 export class PagesModule { }

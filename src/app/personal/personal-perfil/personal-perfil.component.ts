@@ -46,6 +46,18 @@ export interface PeriodicElement {
   materia: String;
   minutoAtraso: String;
 }
+export interface ArraPokemon {
+  base_experience: number
+  name: string;
+  hroIngreso: string;
+  hroSalida: string;
+  hroMarcadoIngreso: string;
+  hroMarcadoSalida: string;
+  dia: String;
+  tipo: String;
+  materia: String;
+  minutoAtraso: String;
+}
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {cnt: 1, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
@@ -58,8 +70,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {cnt: 8, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
   {cnt: 9, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
   {cnt: 10, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
-  {cnt: 1, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
-  {cnt: 2, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
+  {cnt: 11, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
+  {cnt: 12, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
   {cnt: 3, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
   {cnt: 4, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},
   {cnt: 5, name: '23-05-2023', dia: "Martes", hroIngreso: '10:30', hroSalida: '18.30', hroMarcadoIngreso:'08:10', hroMarcadoSalida: '18:30', tipo:'Atraso', materia:"M2344",minutoAtraso:"2"},

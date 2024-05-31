@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
@@ -9,16 +11,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent {
-  credentials = { username: '', password: '' };
+  // selectedValue: number;
+  credentials = { username: '', password: '',selectedValue: 1 };
+  credentialsForm: FormGroup;
+  constructor(private router: Router, private authService: AuthService, private toastr: ToastrService, private fb: FormBuilder){
+    this.credentialsForm = this.fb.group({
+      username: ['',[Validators.required, Validators.minLength(3)] ],
+      password: ['',[Validators.required, Validators.minLength(6)]],
+      selectedValue: ["1",Validators.required] // Valor inicial para el mat-radio-group
+    });
+  }
   
-  constructor(private router: Router, private authService: AuthService){}
-  
-  login(): void {
+  onSubmit(): void {
 /*     this.router.navigate(['/login']); */
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    console.log("Entra");
+    /* console.log("Datos del credencial " + this.credentials ); */
+    //console.log("Datos del credencial ", this.credentialsForm.value );
+    console.log("Datos del invalidate ", this.credentialsForm.invalid );
+    //this.toastr.success('Hello world!', 'Toastr fun!');
+    if(this.credentialsForm.invalid){
+      return 
+    }else {
+      console.log("Datos del credencial ", this.credentialsForm.value );
+    }
+    // this.router.navigate(['/dashboard']);
 
-    this.router.navigate(['/dashboard']);
-    this.authService.login(this.credentials).subscribe(
+    /* this.authService.login(this.credentials).subscribe(
       (response) => {
         
        console.log('credenciales correctos');
@@ -34,10 +52,10 @@ export class AuthComponent {
         console.log('error de credenciales');
         console.error(error);
       
-        
+        this.toastr.error('Mensaje!', 'Error de credenciales!');
       
         // Maneja los errores, por ejemplo, muestra un mensaje de error al usuario.
       }
-    );
+    ); */
   }
 }

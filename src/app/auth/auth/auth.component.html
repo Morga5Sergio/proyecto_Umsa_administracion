@@ -17,10 +17,48 @@
         <div class="login-container">
           <h1>ADMINISTRACION DE EMPRESAS</h1>
           <img src="assets/logo1.png" alt="" class="avatar">
-          <form (ngSubmit)="login()">
-            
+          
+          
+          <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+            <div id="radio-group">
+              <section id="txtSelection">Seleccione un estamento </section>
+              <mat-radio-group aria-label="Select an option" formControlName="selectedValue">
+                <mat-radio-button value="1">Administrativo</mat-radio-button>
+                <mat-radio-button value="2">Docente</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="form-group">      
+              <!-- <label for="username">Username:</label> -->
+              <!-- <input id="username" formControlName="username"> -->
+              <input type="text" id="username" formControlName="username" name="username" class="form-control" placeholder="Ingrese su usuario">
+            </div>
+            <div *ngIf="credentialsForm.get('username')?.invalid && credentialsForm.get('username')?.touched">
+              <div id="txtSelection1" *ngIf="credentialsForm.get('username')?.errors?.['required']">El usuario es requerido</div>
+              <small id="txtSelection1" *ngIf="credentialsForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters</small>
+            </div>
+            <!-- <label for="password">Password:</label>
+            <input id="password" type="password" formControlName="password"> -->
             <div class="form-group">
-             
+              <input type="password" id="password" formControlName="password" name="password" class="form-control" placeholder="Ingrese su contraseña">
+            </div>
+            <button type="submit"  class="btn btn-primary">Iniciar sesión</button>
+            <!-- [disabled]="credentialsForm.invalid" -->
+            <!-- <button type="submit">Submit</button> -->
+          </form>
+
+          <!-- <form (ngSubmit)="login()">
+            
+            <div id="radio-group">
+              <section id="txtSelection">Seleccione un estamento </section>
+              
+              <mat-radio-group aria-label="Select an option" [(ngModel)]="credentials.selectedValue" name="role" >
+                <mat-radio-button [value]=1>Administrativo</mat-radio-button>
+                <mat-radio-button [value]=2>Docente</mat-radio-button>
+              </mat-radio-group>  
+            </div>
+            
+
+            <div class="form-group">            
               <input type="text" id="username" [(ngModel)]="credentials.username" name="username" class="form-control" placeholder="Ingrese su usuario">
             </div>
             <div class="form-group">
@@ -28,7 +66,7 @@
               <input type="password" id="password"[(ngModel)]="credentials.password" name="password" class="form-control" placeholder="Ingrese su contraseña">
             </div>
             <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-          </form>
+          </form> -->
           
         </div>
       </div>
