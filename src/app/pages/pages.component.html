@@ -1,3 +1,5 @@
+
+<!-- <administracion [datos]="datosDelPadre"></administracion> -->
 <mat-toolbar>
   <span>SISTEMA WEB DE ADMINISTRATIVOS</span>
  
@@ -12,7 +14,7 @@
       
       <button mat-button class="menu-button">
         <mat-icon>home</mat-icon> 
-        <span><a [routerLink]="['/dashboard/administracion-lista']">ADMINISTRATIVO</a></span> 
+        <span><a [routerLink]="['/dashboard/administracion-lista', id]">ADMINISTRATIVO</a></span> 
       </button>
       <button mat-button class="menu-button">
         <mat-icon>face</mat-icon> 
@@ -29,7 +31,7 @@
       <mat-divider></mat-divider>
       <button mat-button class="menu-button">
         <mat-icon>close</mat-icon> 
-        <span>SALIR</span> 
+        <span > <a [routerLink]="['/login']">SALIR</a></span>
       </button>
       <!-- <button mat-button class="menu-button">
         <mat-icon>home</mat-icon> 

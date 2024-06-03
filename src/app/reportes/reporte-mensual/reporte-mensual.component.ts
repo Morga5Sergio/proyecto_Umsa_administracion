@@ -29,7 +29,7 @@ export class ReporteMensualComponent {
       }
       return false;
     });
-console.log(listaSemestre);
+    console.log(listaSemestre);
 
     this.generarPDFMensualKarla(listaSemestre);
   }
@@ -67,6 +67,8 @@ console.log(listaSemestre);
   }
 
   generarPDFMensualKarla( listaSemestre: any) {
+    console.log("PdfMensual entra aqui");
+
     const pdfMaker = new PdfMakeWrapper();
     pdfMaker.pageOrientation('landscape');
     
@@ -135,19 +137,20 @@ console.log(listaSemestre);
     }
     
 
-    let objetoIfram = document.getElementById('tagDataPdf');
+    let objetoIfram = document.getElementById('tagDataPdfMensual');
 
     const pdfGEnerado= pdfMaker.create();
     pdfGEnerado.getBase64((data) => {
+      console.log("Entra Aqui Generadov sdfsd");
       console.log(data);
       this.pdfData = data;
       if (objetoIfram != null) {
         objetoIfram.setAttribute('src', 'data:application/pdf;base64, ' + data);
+      }else {
+        console.log("Entra error aqui");
       }
     });
   }
-
-
 }
 
 export interface PeriodicElement {

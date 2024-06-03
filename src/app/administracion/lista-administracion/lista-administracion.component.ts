@@ -1,17 +1,20 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { AfterViewInit, ChangeDetectorRef, Component, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Input, SimpleChanges, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AuthService } from 'src/app/auth/auth.service';
-
+import { ActivatedRoute } from '@angular/router';
+import { DataServicioService } from 'src/app/servicioDatos/data-servicio.service';
 @Component({
   selector: 'app-lista-administracion',
   templateUrl: './lista-administracion.component.html',
   styleUrls: ['./lista-administracion.component.scss']
 })
 export class ListaAdministracionComponent implements AfterViewInit {
-  
+  @Input() datos: any;
   swisVisible = false;
+  id: string;
   /*Seccion Uno */ 
   displayedColumns: string[] = ['select', 'position', 'docente', 'cantidad_materias'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -43,9 +46,26 @@ export class ListaAdministracionComponent implements AfterViewInit {
   }
 
   
-  constructor(private cdr: ChangeDetectorRef, private authService: AuthService) {
+  constructor(private cdr: ChangeDetectorRef, 
+              private authService: AuthService, 
+              private route: ActivatedRoute,
+              private dataService: DataServicioService) {
       this.arrPokemon = [];
+      this.id = "";
    }
+   async  ngOnInit() {
+    this.id = this.route.snapshot.params['id'];
+    console.log('ID:', this.id);
+    await  this.enviarDatos();
+   }
+   async  enviarDatos() {
+    console.log("Cuantas veces entra aqui");
+    const datos = { id:this.id };
+    await this.dataService.actualizarDatos(datos);
+  }
+
+
+
   ngAfterViewChecked() {
     if (this.swisVisible && this.paginator2 && !this.dataSourceDocente.paginator) {
       this.dataSourceDocente.paginator = this.paginator2;
@@ -114,9 +134,7 @@ export class ListaAdministracionComponent implements AfterViewInit {
     this.cdr.detectChanges(); // Forzar la detección de cambios después de asignar el paginador
     console.log("Asignado paginador2");
   }
-  ngOnInit() {
-    // this.dataSource.paginator = this.paginator;
-  }
+ 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
     const numSelected = this.selection.selected.length;

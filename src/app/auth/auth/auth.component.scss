@@ -28,11 +28,9 @@
   margin-bottom: 10px; /* Espacio entre el título y el subtítulo */
   margin-left: 50px;
 }
- 
-  
-  
+
   .form-group {
-    margin-bottom: 20px; /* Espacio entre los campos de entrada */
+    /* margin-bottom: 20px; */ /* Espacio entre los campos de entrada */
   }
   #radio-group{
     color: #3e3d3d;
@@ -48,6 +46,8 @@
     margin-top: 5px;
   }
   #txtSelection1{
+    vertical-align: 10px;
+    /* background-color: yellow; */
     text-align: left;
     color: #d24949;
     margin-left: 10px;

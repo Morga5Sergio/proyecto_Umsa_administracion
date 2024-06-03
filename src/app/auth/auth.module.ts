@@ -13,10 +13,11 @@ import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { AppComponent } from '../app.component';
 @NgModule({
-  declarations: [
-    AuthComponent
-  ],
+  declarations: [AuthComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -28,9 +29,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule, // ---ver mensaje x si las credenciales estan mal 
     MatRadioModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers:[AuthService],
+  bootstrap: [AppComponent]
   
 })
 export class AuthModule { }

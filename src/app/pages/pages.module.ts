@@ -12,10 +12,8 @@ import { AuthModule } from '../auth/auth.module';
 import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
-
-
-
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -32,7 +30,9 @@ import { MatRadioModule } from '@angular/material/radio';
     AuthModule,
     RouterModule,
     MatTableModule,
-    MatRadioModule
+    MatRadioModule,
+    MatFormFieldModule,
+    MatSelectModule
   ]
 })
 export class PagesModule { }

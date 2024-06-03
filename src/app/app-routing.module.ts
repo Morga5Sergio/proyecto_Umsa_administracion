@@ -16,11 +16,12 @@ const routes: Routes = [
       path: 'personal', loadChildren: () => import('./personal/personal.module').then(m => m.PersonalModule)
     },
     {
-      path: 'reporte', 
-      loadChildren: () => import('./reportes/reporte-routing.module').then(m => m.ReporteRoutingModule)
+      path: 'reporte', loadChildren: () => import('./reportes/reporte-routing.module').then(m => m.ReporteRoutingModule)
     },
     {
-      path: 'administracion-lista', component: ListaAdministracionComponent , 
+      path: 'administracion-lista/:id', 
+      component: ListaAdministracionComponent 
+      //data: {id:""} 
     },
     {
       path: 'personal-perfil', component: PersonalPerfilComponent ,
