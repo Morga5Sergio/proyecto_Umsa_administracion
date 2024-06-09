@@ -14,7 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     PagesComponent,
@@ -32,7 +32,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatTableModule,
     MatRadioModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule
   ]
 })
 export class PagesModule { }

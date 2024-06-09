@@ -140,6 +140,7 @@ export class ReporteMensualComponent {
     let objetoIfram = document.getElementById('tagDataPdfMensual');
 
     const pdfGEnerado= pdfMaker.create();
+    //pdfGEnerado.download("Archivo.pdf")
     pdfGEnerado.getBase64((data) => {
       console.log("Entra Aqui Generadov sdfsd");
       console.log(data);
@@ -150,6 +151,7 @@ export class ReporteMensualComponent {
         console.log("Entra error aqui");
       }
     });
+  
   }
 }
 

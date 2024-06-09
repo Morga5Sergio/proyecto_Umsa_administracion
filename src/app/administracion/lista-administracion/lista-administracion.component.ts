@@ -6,6 +6,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { DataServicioService } from 'src/app/servicioDatos/data-servicio.service';
+import { ReporteMensual } from 'src/app/interfaces/reporte-mensual';
+import { Columns, PdfMakeWrapper,Table,Txt, Ul } from 'pdfmake-wrapper';
 @Component({
   selector: 'app-lista-administracion',
   templateUrl: './lista-administracion.component.html',
@@ -13,6 +15,7 @@ import { DataServicioService } from 'src/app/servicioDatos/data-servicio.service
 })
 export class ListaAdministracionComponent implements AfterViewInit {
   @Input() datos: any;
+  fechaDelSistema: Date;
   swisVisible = false;
   id: string;
   /*Seccion Uno */ 
@@ -45,19 +48,29 @@ export class ListaAdministracionComponent implements AfterViewInit {
     }
   }
 
+
+
   
   constructor(private cdr: ChangeDetectorRef, 
               private authService: AuthService, 
               private route: ActivatedRoute,
               private dataService: DataServicioService) {
+      this.fechaDelSistema = new Date();
       this.arrPokemon = [];
       this.id = "";
    }
    async  ngOnInit() {
+    this.fechaDelSistema = new Date();
+    console.log("Fecha del sistema==>" + this.fechaDelSistema);
     this.id = this.route.snapshot.params['id'];
     console.log('ID:', this.id);
     await  this.enviarDatos();
    }
+
+   obtenerFechaFormateada(): string {
+    return this.fechaDelSistema.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+
    async  enviarDatos() {
     console.log("Cuantas veces entra aqui");
     const datos = { id:this.id };
@@ -79,24 +92,8 @@ export class ListaAdministracionComponent implements AfterViewInit {
     this.cdr.detectChanges();
     this.initPaginator2();
 
-
     console.log('Selected elements:', this.selection.selected);
-    /* this.selection.isSelected
-    console.log("Seleccionado ==> " ,  this.selection.isSelected); */
-    // this.ELEMENT_DATA2 = this.selection.isSelected;
-    /* this.authService.isPokemon().subscribe(
-      (response) => {
-        console.log("Entra Aqui");
-        console.log(response);
-      }
-    ); */
-/* 
-    this.authService.isExamplePost({title:"foo", body:"bar", userId:1}).subscribe(
-      (response) => {
-        console.log("Entra Aqui - Maribel");
-        console.log(response);
-      }
-    ); */
+
 
     this.authService.isPokemon().subscribe(
       (response) => {
@@ -106,12 +103,6 @@ export class ListaAdministracionComponent implements AfterViewInit {
          // this.arrPokemon =  response;
       }
     );
-    /* if (this.paginator2) {
-      this.dataSourceDocente.paginator = this.paginator2;
-      console.log("Ingresa Aqui");
-    }else {
-      console.log("Ingresa Aqui false");
-    } */
   }
 
   masterToggle() {
@@ -162,7 +153,151 @@ export class ListaAdministracionComponent implements AfterViewInit {
   ELEMENT_DATA2: PeriodicElement[] = [];
   
 
+  // Codigo para impresion 
+  mesSeleccionado?: string= 'AGOSTO';
+  gestionSeleccionado: string='2019';
+  predioSeleccionado: string ='ADM. EMPRESAS - MONOBLOCK CENTRAL';
+  pdfData: any;
+  listaAsistencia?: ReporteMensual[];
+  columnHeaders = ['Nombre', 'Fecha','Dia', 'Turno','Hora Ingreso','Hora Salida','Ingreso marcado', 'Salida marcado', 'Atraso', 'Materia'];
+  dataLista?: any;
+  dataObservaciones?: any;
+
+  cargarObservaciones(){
+    this.dataObservaciones=['24 de Diciembre suspención de clases', '25 de diciembre navidad', '31 de diciembre suspencion de clases',
+      '1 de enero año nuevo', '4 de enero recupero clases'
+    ];
+  }
+
+  cargarListaAsistencia(){
+    this.listaAsistencia=[
+      {
+        cnt: 1, name: 'Albarracin Paredes Nelson', dia: "Martes", fecha: "12/20/2020", hroIngreso: '08:30', hroSalida: '12.30', hroMarcadoIngreso: '08:10', hroMarcadoSalida: '12:32', tipo: 'Atraso', materia: "M2344", minutoAtraso: "2", semestre: "4to semestre",
+        turno: 'Turno Mañana'
+      },
+      {
+        cnt: 1, name: 'Albarracin Paredes Nelson', dia: "Martes", fecha: "12/20/2020", hroIngreso: '08:30', hroSalida: '12.30', hroMarcadoIngreso: '08:10', hroMarcadoSalida: '12:32', tipo: 'Atraso', materia: "M2344", minutoAtraso: "2", semestre: "2do semestre",
+        turno: 'Turno Mañana'
+      },
+      {
+        cnt: 1, name: 'Albarracin Paredes Nelson', dia: "Martes", fecha: "12/20/2020", hroIngreso: '08:30', hroSalida: '12.30', hroMarcadoIngreso: '08:10', hroMarcadoSalida: '12:32', tipo: 'Atraso', materia: "M2344", minutoAtraso: "2", semestre: "1er semestre",
+        turno: 'Turno Tarde'
+      },
+      {
+        cnt: 1, name: 'Albarracin Paredes Nelson', dia: "Martes", fecha: "12/20/2020", hroIngreso: '08:30', hroSalida: '12.30', hroMarcadoIngreso: '08:10', hroMarcadoSalida: '12:32', tipo: 'Atraso', materia: "M2344", minutoAtraso: "2", semestre: "5to semestre",
+        turno: 'Turno Tarde'
+      },
+      {
+        cnt: 1, name: 'Albarracin Paredes Nelson', dia: "Martes", fecha: "12/20/2020", hroIngreso: '08:30', hroSalida: '12.30', hroMarcadoIngreso: '08:10', hroMarcadoSalida: '12:32', tipo: 'Atraso', materia: "M2344", minutoAtraso: "2", semestre: "4to semestre",
+        turno: 'Turno Tarde'
+      },
+    ];
+  }
+
+  imprimir():void{
+    //cargar lista de asistencia
+    this.cargarListaAsistencia();
+    this.cargarObservaciones();
+    let uniqueNames = new Map();
+    let listaSemestre = this.listaAsistencia?.filter(item => {
+      if (!uniqueNames.has(item.semestre)) {
+        uniqueNames.set(item.semestre, true);
+        return true;
+      }
+      return false;
+    });
+    console.log(listaSemestre);
+
+    this.generarPDFMensual(listaSemestre);
+  }
+
+  generarPDFMensual( listaSemestre: any) {
+    console.log("PdfMensual entra aqui");
+
+    const pdfMaker = new PdfMakeWrapper();
+    pdfMaker.pageOrientation('landscape');
+    
+    pdfMaker.add(pdfMaker.ln(1));
+    pdfMaker.add(new Txt('CARRERA DE ADMINISTRACIÓN DE EMPRESAS').alignment('center').bold().end);
+    pdfMaker.add(pdfMaker.ln(1));
+    pdfMaker.add(new Txt('ASISTENCIA DEL MES DE  '+this.mesSeleccionado+' DE '+this.gestionSeleccionado+' PREDIO '+this.predioSeleccionado).alignment('center').bold().end);
+    pdfMaker.add(new Txt('Turno 1 - Ingreso: ').alignment('center').fontSize(10).lineHeight(1).end);
+    pdfMaker.add(new Txt('Turno 2 - Ingreso: ').alignment('center').fontSize(10).lineHeight(1).end);
+    pdfMaker.add(new Txt('Turno 3 - Ingreso: ').alignment('center').fontSize(10).lineHeight(1).end);
+    pdfMaker.add(new Txt('Turno 4 - Ingreso: ').alignment('center').fontSize(10).lineHeight(1).end);
+    pdfMaker.add(pdfMaker.ln(1));
+    
+    if(listaSemestre!= null && this.listaAsistencia!=null)
+    for (let index = 0; index < listaSemestre?.length; index++) {
   
+      //filtrar por semestre 
+      let item = listaSemestre[index];
+
+      //filtrar por semestre
+      var listaDocenteFiltrado = this.listaAsistencia.filter(function(asistencia){
+        return asistencia.semestre == item.semestre;
+      });
+
+      this.dataLista= listaDocenteFiltrado.map(item => [
+        item.name, 
+        item.fecha, 
+        item.dia,
+        item.turno,
+        item.hroIngreso, 
+        item.hroSalida,
+        item.hroMarcadoIngreso, 
+        item.hroMarcadoSalida, 
+        item.minutoAtraso, 
+        item.materia]);
+
+      pdfMaker.add(pdfMaker.ln(1));
+      pdfMaker.add(new Txt('Semestre: '+item.semestre).fontSize(10).end);
+      pdfMaker.add(pdfMaker.ln(1));
+  
+      pdfMaker.add(
+        new Table([this.columnHeaders, ...this.dataLista])
+        .alignment('center')
+        .layout({
+          fillColor: (rowIndex) => {
+              // row 0 is the header
+              if (rowIndex === 0) {
+                return '#d0e0e3';
+              }
+      
+              return '#ffffff';
+          }
+      })
+        .fontSize(12)
+        .alignment('center').end
+      );
+  
+      pdfMaker.add(pdfMaker.ln(1));  
+
+      pdfMaker.add(new Txt('OBSERVACIONES').bold().end);
+
+      pdfMaker.add(pdfMaker.ln(1));
+  
+      pdfMaker.add(new Ul(this.dataObservaciones).end);    
+
+    }
+    
+
+    let objetoIfram = document.getElementById('tagDataPdfMensual');
+
+    const pdfGEnerado= pdfMaker.create();
+    pdfGEnerado.download("Archivo.pdf")
+    /* pdfGEnerado.getBase64((data) => {
+      console.log("Entra Aqui Generadov sdfsd");
+      console.log(data);
+      this.pdfData = data;
+      if (objetoIfram != null) {
+        objetoIfram.setAttribute('src', 'data:application/pdf;base64, ' + data);
+      }else {
+        console.log("Entra error aqui");
+      }
+    }); */
+  
+  }
 
 }
 
@@ -173,6 +308,46 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
+  {position: 1, docente: 'marco', cantidad_materia: 2},
+  {position: 2, docente: 'marco', cantidad_materia: 4 },
+  {position: 3, docente: 'marco', cantidad_materia: 2 },
+  {position: 4, docente: 'marco', cantidad_materia: 5 },
+  {position: 5, docente: 'marco', cantidad_materia: 2},
+  {position: 6, docente: 'marco', cantidad_materia: 2},
+  {position: 7, docente: 'marco', cantidad_materia: 8},
+  {position: 8, docente: 'marco', cantidad_materia: 2},
+  {position: 9, docente: 'marco', cantidad_materia: 5},
+  {position: 10, docente: 'marco', cantidad_materia: 1 },
+  {position: 1, docente: 'marco', cantidad_materia: 2},
+  {position: 2, docente: 'marco', cantidad_materia: 4 },
+  {position: 3, docente: 'marco', cantidad_materia: 2 },
+  {position: 4, docente: 'marco', cantidad_materia: 5 },
+  {position: 5, docente: 'marco', cantidad_materia: 2},
+  {position: 6, docente: 'marco', cantidad_materia: 2},
+  {position: 7, docente: 'marco', cantidad_materia: 8},
+  {position: 8, docente: 'marco', cantidad_materia: 2},
+  {position: 9, docente: 'marco', cantidad_materia: 5},
+  {position: 10, docente: 'marco', cantidad_materia: 1 },
+  {position: 1, docente: 'marco', cantidad_materia: 2},
+  {position: 2, docente: 'marco', cantidad_materia: 4 },
+  {position: 3, docente: 'marco', cantidad_materia: 2 },
+  {position: 4, docente: 'marco', cantidad_materia: 5 },
+  {position: 5, docente: 'marco', cantidad_materia: 2},
+  {position: 6, docente: 'marco', cantidad_materia: 2},
+  {position: 7, docente: 'marco', cantidad_materia: 8},
+  {position: 8, docente: 'marco', cantidad_materia: 2},
+  {position: 9, docente: 'marco', cantidad_materia: 5},
+  {position: 10, docente: 'marco', cantidad_materia: 1 },
+  {position: 1, docente: 'marco', cantidad_materia: 2},
+  {position: 2, docente: 'marco', cantidad_materia: 4 },
+  {position: 3, docente: 'marco', cantidad_materia: 2 },
+  {position: 4, docente: 'marco', cantidad_materia: 5 },
+  {position: 5, docente: 'marco', cantidad_materia: 2},
+  {position: 6, docente: 'marco', cantidad_materia: 2},
+  {position: 7, docente: 'marco', cantidad_materia: 8},
+  {position: 8, docente: 'marco', cantidad_materia: 2},
+  {position: 9, docente: 'marco', cantidad_materia: 5},
+  {position: 10, docente: 'marco', cantidad_materia: 1 },
   {position: 1, docente: 'marco', cantidad_materia: 2},
   {position: 2, docente: 'marco', cantidad_materia: 4 },
   {position: 3, docente: 'marco', cantidad_materia: 2 },

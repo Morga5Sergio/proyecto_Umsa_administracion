@@ -15,7 +15,7 @@ import { AuthModule } from './auth/auth.module';
 import { RouterModule } from '@angular/router';
 import { PersonalModule } from './personal/personal.module';
 import { PagesModule } from './pages/pages.module';
-
+import { ReporteModule } from './reportes/reporte.module';
 import { ListaAdministracionComponent } from './administracion/lista-administracion/lista-administracion.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
@@ -58,7 +58,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatDatepickerModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    ReporteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

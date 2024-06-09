@@ -7,11 +7,12 @@ table {
     display: inline-block; 
 }
 #titleAdministracion{
-    width: 90%; 
+    width: 85%; 
     display: inline-block;
 }
 #srtFecha{
-    width: 10%;
+    color: black;
+    width: 15%;
     display: inline-block;
     font-size: 0.9rem;
 }
@@ -40,6 +41,10 @@ table {
 /* Color Boton*/
 #buttonBuscarAnadir{
     background-color: rgb(92, 14, 165);
+}
+#buttonBuscarAnadirAA{
+    background-color: rgb(92, 14, 165);
+    width: 100% !important;
 }
 
 /**/
@@ -72,50 +77,37 @@ table {
 
 #item1 {
     display: inline-block;
-    width: 26%;
+    width: 33.3%;
 }
 #item2 {
     display: inline-block;
-    width: 26%;
+    width: 33.3%;
 }
 #item3 {
     display: inline-block;
-    width: 23%;
+    width: 33.3%;
 }
 #item4 {
     display: inline-block;
-    width: 23%;
-}
-#item5 {
-    display: inline-block;
-    width: 3%;
-}
-#item6 {
-    display: inline-block;
-    width: 3%;
-}
-#item7 {
-    display: inline-block;
-    width: 3%;
+    width: 30%;
 }
 
 #sectionBotonBuscar{
-    /* width: 30% !important;  */
+    background-color: teal;
+    width: 25% !important; 
     display: inline-block; 
     vertical-align: middle; 
     /* justify-content: right !important;  */
     /* text-align: right; */
 }
 #sectionBotonLimpiar{
-    /* width: 30% !important;  */
+    width: 20% !important; 
     display: inline-block; 
-    vertical-align: 6px;
     /* text-align: right; */
 }
 #sectionBotonPrint{
-    /* width: 30% !important;  */
+    width: 25% !important; 
     display: inline-block; 
-    vertical-align: 6px;
     /* text-align: left; */
 }
 

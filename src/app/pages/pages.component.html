@@ -1,49 +1,73 @@
 
 <!-- <administracion [datos]="datosDelPadre"></administracion> -->
 <mat-toolbar>
+  <img src="assets/logo1.png" style="display: inline-block; vertical-align: middle;"  width="55px" height="55px"  alt="Imagen Archivo la paz">
   <span>SISTEMA WEB DE ADMINISTRATIVOS</span>
- 
+  <mat-divider></mat-divider>
 </mat-toolbar>
+<!-- <mat-toolbar>
+  <div class="card-container">
+    
+      <a class="card" target="_blank" rel="noopener">
+        <button mat-button style="color:honeydew"><mat-icon>home</mat-icon>  ADMINISTRATIVO</button>
+      </a>
+      
+      
+    
+  </div>
+  <div class="card-container">
+    <button mat-button class="menu-button">
+      <mat-icon>face</mat-icon> 
+      <span><a [routerLink]="['/dashboard/personal-perfil']">DOCENTE</a></span>
+    </button>         
+  </div>
+  <span>Mi Aplicación</span>
+  <span class="spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">Menú</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Opción 1</button>
+    <button mat-menu-item>Opción 2</button>
+    <button mat-menu-item>Opción 3</button>
+  </mat-menu>
+  
+</mat-toolbar> -->
 
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened>
-      <img class="avatar mat-elevation-z8" src="assets/logo1.png" alt="">
-      <h4 class="name">Nilda Quispe</h4>
-      <h5 class="tipo">Adminsitrador</h5>
-      <mat-divider></mat-divider>
-      
-      <button mat-button class="menu-button">
-        <mat-icon>home</mat-icon> 
-        <span><a [routerLink]="['/dashboard/administracion-lista', id]">ADMINISTRATIVO</a></span> 
-      </button>
-      <button mat-button class="menu-button">
-        <mat-icon>face</mat-icon> 
-        <span><a [routerLink]="['/dashboard/personal-perfil']">DOCENTE</a></span>
-      </button>
-      <button mat-button class="menu-button">
-        <mat-icon>list</mat-icon> 
-        <span > <a [routerLink]="['/dashboard/reporte/reporte-verano']">Rep. Verano</a></span> 
-      </button>
-      <button mat-button class="menu-button">
-        <mat-icon>list</mat-icon> 
-        <span > <a [routerLink]="['/dashboard/reporte/reporte-mensual']">Mensual</a></span> 
-      </button>
-      <mat-divider></mat-divider>
-      <button mat-button class="menu-button">
-        <mat-icon>close</mat-icon> 
-        <span > <a [routerLink]="['/login']">SALIR</a></span>
-      </button>
-      <!-- <button mat-button class="menu-button">
-        <mat-icon>home</mat-icon> 
-        <span><a [routerLink]="['/dashboard/administracion-lista']">HOME</a></span> 
-      </button> -->
+  <mat-drawer #sidenav [mode]="isSmallScreen ? 'over' : 'side'" [(opened)]="opened" style="width: 15em;">
+    <img class="avatar mat-elevation-z8" src="assets/logo1.png" alt="">
+    <h4 class="name">Nilda Quispe</h4>
+    <h5 class="tipo">Administrador</h5>
+    <mat-divider></mat-divider>
+    
+    <button mat-button class="menu-button">
+      <mat-icon>face</mat-icon> 
+      <span style="font-size: 12px;"><a [routerLink]="['/dashboard/administracion-lista', id]">ADMINISTRATIVO</a></span> 
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>face</mat-icon> 
+      <span><a [routerLink]="['/dashboard/personal-perfil']">DOCENTE</a></span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>list</mat-icon> 
+      <span > <a [routerLink]="['/dashboard/reporte/reporte-verano']">Rep. Verano</a></span> 
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>list</mat-icon> 
+      <span > <a [routerLink]="['/dashboard/reporte/reporte-mensual']">Mensual</a></span> 
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button">
+      <mat-icon>close</mat-icon> 
+      <span > <a [routerLink]="['/login']">SALIR</a></span>
+    </button>
   </mat-drawer>
 
-  <mat-drawer-content>
-    <div class="content mat-elevation-z8">
+  <mat-drawer-content >
+      <button mat-icon-button  style="margin-left: 10px;" (click)="opened = true" *ngIf="isSmallScreen" class="menu-toggle-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="content mat-elevation-z8"> 
       <router-outlet></router-outlet>
     </div>
   </mat-drawer-content>
- 
 </mat-drawer-container>
-

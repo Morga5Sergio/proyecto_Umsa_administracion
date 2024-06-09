@@ -76,3 +76,358 @@ mat-divider{
 mat-drawer-content{
   height: calc(100vh - 65px);
 }
+
+.example-container {
+  height: 100%;
+}
+
+.menu-button {
+  width: 100%;
+  text-align: left;
+}
+
+.content {
+  padding: 16px;
+}
+
+.menu-toggle-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+}
+
+
+@media (max-width: 599px) {
+  .mat-drawer {
+    width: 250px;
+  }
+}
+
+// OTRO 
+
+#sectionUsuario{
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 2em;
+}
+#displayMin{
+  visibility: hidden;
+}
+#displayMax{
+  display: inline-block;
+}
+#swCambioP{
+  display: none;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* Seccion para resaltar icono*/
+.card-container .card:not(:last-child) {
+  margin-right: 0;
+}
+.card svg.material-icons path {
+  fill: #888;
+}
+.card {
+  border-radius: 4px;
+ /* border: 1px solid #eee;
+  background-color: #fafafa;*/
+  height: 30px;
+  width: 150px;
+  /* margin: 0 8px 16px; */
+  /* padding: 16px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+.cardKardex {
+  border-radius: 4px;
+ /* border: 1px solid #eee;
+  background-color: #fafafa;*/
+  height: 30px;
+  width: 120px;
+  /* margin: 0 8px 16px; */
+  /* padding: 16px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+.card-container .card:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+.card-container .card:not(.highlight-card):hover .material-icons path {
+  fill: rgb(105, 103, 103);
+}
+/* Fin de seccion para resaltar icono*/
+.example-spacer2{
+  flex: content;
+}
+.example-icon{
+  padding: 0 14px;
+}
+#tituloBienvenida
+{
+  /* background: #F5F5DC; */ /* Mas claro*/ /*  #D7D7A8 Mas Obscuro  */ 
+  background: transparent;
+  font-size: 2em;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 70%; 
+  margin: 0 auto;
+  display: inline-block;
+  margin-bottom: 2px;
+  
+  /* margin-bottom: 0.5em; */
+  
+} 
+#sectionGrafico
+{
+  text-align: center; 
+  margin: 0 auto; 
+  width: 70%; 
+  height: 20%;  
+  background-image: url('/assets/almacen_medicamentos.jpg'); 
+  background-repeat: no-repeat; 
+  background-position: center;        
+}
+#imgBienvenida
+{
+  width: 35%;
+  height: 30em; 
+  margin: 0 auto;
+}
+
+#strTitulo{
+  margin-left: 0.5em; 
+  margin: 0 auto;
+  /* margin-top: 5em; */
+  margin-bottom: 0.5em; 
+  text-align: center; 
+  padding-top: 2em; 
+  width: 100%; 
+  height: 45em; 
+  /* background-image: radial-gradient(circle at 50.28% 53.16%, #ffffff 0, #ffffff 25%, #f5f5dc 50%, #d3d8b5 75%, #b5c198 100%); */
+  background-image: radial-gradient(circle at 50% 50%, #ffffff 0, #ffffef 25%, #f5f5dc 50%, #e6ebca 75%, #d6e1ba 100%);
+  /* background: linear-gradient(left, tomato, cyan, lightgreen);*/
+  /* background: #F5F5DC; */
+  /* background: url('/assets/fondoImagen.png'); */
+   /* background-image: url('/assets/fondoSedeges800p.png');*/
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+
+#sectionUsuario:hover {
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+#sectionbuscar{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2em;
+  text-align: left;
+}
+#sectionImprimir{
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2em;
+  text-align: center;
+  /*border-radius: 10px;
+  border: black 0.5px solid;*/
+}
+
+#strFecha{
+    width: 50%;
+    display: inline-block;
+}
+
+  #mat1{
+      width: 50%;
+  }
+  #strCarpeta{
+      width: 50%;
+  }
+#strArea, #strDetalles{
+  width: 100%;
+  display: inline-block;
+}
+#strGestion, #strFojas{
+  width: 50%;
+  display: inline-block;
+}
+#strResponsable{
+  width: 100%;
+  display: inline-block;
+}
+
+#mat2{
+  display: block;
+  width: 100%;
+}
+#mat3{
+  display: block;
+  width: 100%;
+}
+#mat4{
+  display: block;
+  width: 100%;
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px), screen and (max-device-width: 1200px) {
+  #tituloBienvenida
+  {
+      width: 40%; 
+      margin: 0 auto;
+      font-size: 2.8em;
+  } 
+  #imgBienvenida
+  {  
+      width: 40%;
+      height: 30em; 
+  }
+  
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px), screen and (max-device-width: 992px) {
+  #tituloBienvenida
+  {
+      width: 50%; 
+      font-size: 2em;
+  } 
+  #imgBienvenida
+  {  
+      width: 50%;
+  }
+  #sectionUsuario{
+      width: 60%;
+      margin: 0 auto;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px), screen and (max-device-width: 768px) {
+  #tituloBienvenida,#imgBienvenida
+  {
+      width: 70%; 
+  } 
+  #sectionUsuario{
+      width: 70%;
+      margin: 0 auto;
+  }
+  #strTitulo{
+      background-image: radial-gradient(circle at 50% 50%, #ffffff 0, #ffffef 25%, #f5f5dc 50%, #e6ebca 75%, #d6e1ba 100%);
+       /* background-image: url('/assets/fondoTransparenciaSuperMenorJJ.png');  */
+  }
+  #sectionGrafico
+  {
+      /* text-align: center; 
+      margin: 0 auto; 
+       */
+       width: 80%;
+       height: 30%; 
+      background-image: url('/assets/fondoSedeges300p.png'); 
+      /* background-repeat: no-repeat; 
+      background-position: center; */        
+  }
+
+}
+@media only screen and (max-width: 600px), screen and (max-device-width: 600px) {
+  #tituloBienvenida
+  {
+      width: 100%; 
+      font-size: 2em;
+  } 
+  #sectionUsuario{
+      width: 92%;
+      margin: 0 auto;
+  }
+  #swCambioR{
+      display: none;
+  }
+  #swCambioP{
+      display: block;
+  }
+  #posicionMenuMovil{
+      margin-right: 18em;
+      
+  }
+}
+
+@media only screen and (max-width: 583px), screen and (max-device-width: 583px) {
+  
+  #imgBienvenida
+  {
+      width: 48%; 
+      height: 18em;
+  } 
+  #posicionMenuMovil{
+      margin-right: 17em;
+  }
+  #strTitulo{
+     height: 30em;
+      /* background-image: url('/assets/fondoTransparenciaSuperMenorJJJ.png'); */
+  }
+ #sectionGrafico
+  {
+      /* text-align: center; 
+      margin: 0 auto; 
+       */
+      width: 80%;
+      height: 30%;  
+      background-image: url('/assets/fondoSedeges300p.png'); 
+      /* background-repeat: no-repeat; 
+      background-position: center; */        
+  }
+}
+
+@media only screen and (max-width: 563px), screen and (max-device-width: 563px) {
+  
+  /* #posicionMenuMovil{
+      margin-right: 11em;
+  }*/
+  #posicionMenuMovil{
+      margin-right: 16em;
+  }
+}
+@media only screen and (max-width: 535px), screen and (max-device-width: 535px) {
+  
+  /* #posicionMenuMovil{
+      margin-right: 9em;
+  }*/
+  #posicionMenuMovil{
+      margin-right: 13em;
+  }
+}
+
+@media only screen and (max-width: 474px), screen and (max-device-width: 474px) {
+  
+  #posicionMenuMovil{
+      margin-right: 10em;
+  }
+}
+@media only screen and (max-width: 411px), screen and (max-device-width: 411px) {
+  
+  #posicionMenuMovil{
+      margin-right: 9em;
+  }
+}
+@media only screen and (max-width: 360px), screen and (max-device-width: 360px) {
+  
+  #posicionMenuMovil{
+      margin-right: 3.5em;
+  }
+}

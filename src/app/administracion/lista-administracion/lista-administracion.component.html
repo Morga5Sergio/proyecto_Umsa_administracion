@@ -4,7 +4,7 @@
         <h1 style="color: black; text-align: center;"> CARRERA ADMINISTRACION DE EMPRESAS </h1>
     </section> 
     <section id="srtFecha">
-        Fecha Hoy
+        Fecha Hoy &nbsp; {{ obtenerFechaFormateada() }}  
     </section> 
 </section>
 
@@ -119,35 +119,31 @@
             </mat-form-field>
         </section>
 
-        <section class="sectionBotonUpdate">
-            <section id="sectionBotonBuscar" >
-                <button type="button" class="btn btn-primary" id="buttonBuscarAnadir">
-                    <mat-icon style="vertical-align: middle;">search</mat-icon> 
-                    Buscar
-                </button>                        
-            </section>
-            <section id="sectionBotonLimpiar">
-                <button type="button" class="btn btn-primary" id="buttonBuscarAnadir">
-                    <mat-icon style="vertical-align: middle;">cleaning_services</mat-icon> 
-                    Limpiar
-                </button>
-            </section>
-            <section id="sectionBotonPrint">
-                <button type="button" class="btn btn-primary" id="buttonBuscarAnadir">
-                    <mat-icon style="vertical-align: middle;">print</mat-icon> 
-                    Imprimir
-                </button>
-            </section>
+        <section id="sectionBotonBuscar" >
+            <button type="button" class="btn btn-primary" id="buttonBuscarAnadirAA">
+                <mat-icon style="vertical-align: middle;">search</mat-icon> 
+                Buscar
+            </button>                        
         </section>
+        <section id="sectionBotonLimpiar">
+            <button type="button" class="btn btn-primary" id="buttonBuscarAnadir">
+                <mat-icon style="vertical-align: middle;">cleaning_services</mat-icon> 
+                Limpiar
+            </button>
+        </section>
+        <section id="sectionBotonPrint">
+            <button type="button" class="btn btn-primary" id="buttonBuscarAnadir" (click)="imprimir()">
+                <mat-icon style="vertical-align: middle;">print</mat-icon> 
+                Imprimir
+            </button>
+        </section>
+
+        <!-- <section class="sectionBotonUpdate">
+            
+        </section> -->
         
     </section>
     <!-- <section style="width: 20% !important; display: inline-block; vertical-align: middle;" > </section> -->
-   
-
-    
-
-    
-
     <table mat-table [dataSource]="dataSourceDocente" class="mat-elevation-z8">
 
         <!-- Position Column -->

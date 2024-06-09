@@ -1,6 +1,5 @@
-<section style="width: 100% !important;  " >
-    <div class="text-center" style="width: 100% !important; height: 80em;">
-
+<section id="sectionPDF">
+    <div id="PDfSec1">
         <section style="width: 90%;display: inline-block;">
             <span class="titulo" >REPORTE DE MENSUAL</span>
         </section>
@@ -8,11 +7,80 @@
             <h1>Fecha Hoy</h1>
         </section> 
         <hr>
+    </div>   
+    <section id="filtros">
+        <section id="item1">
+            <mat-form-field>
+                <mat-label>Fecha Inicio</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </section>
+        
+        <section id="item2" >
+            <mat-form-field>
+                <mat-label>Fecha Fin</mat-label>
+                <input matInput [matDatepicker]="picker2">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+        </section>
+        <section id="item3"  >
+            <mat-form-field color="primary" >
+                <mat-label>Select</mat-label>
+                <mat-select >
+                  <mat-option value="one">TODOS</mat-option>
+                  <mat-option value="two">ATRASOS</mat-option>
+                  <mat-option value="two">ABANDONOS</mat-option>
+                  <mat-option value="two">LICENCIAS</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </section>
+    
+        <section id="item4">
+            <mat-form-field>
+                <mat-label>Select</mat-label>
+                <mat-select>
+                  <mat-option value="one">MATERIAS</mat-option>
+                  <mat-option value="two">M1</mat-option>
+                  <mat-option value="two">M2</mat-option>
+                  <mat-option value="two">m3</mat-option>
+                  <mat-option value="two">M1</mat-option>
+                  <mat-option value="two">M2</mat-option>
+                  <mat-option value="two">m3</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </section>
+
+        <section class="sectionBotonUpdate">
+            <section id="sectionBotonBuscar" >
+                <button type="button" class="btn btn-primary" id="buttonBuscarAnadir">
+                    <mat-icon style="vertical-align: middle;">search</mat-icon> 
+                    Buscar
+                </button>                        
+            </section>
+            <section id="sectionBotonLimpiar">
+                <button type="button" class="btn btn-primary" id="buttonBuscarAnadir">
+                    <mat-icon style="vertical-align: middle;">cleaning_services</mat-icon> 
+                    Limpiar
+                </button>
+            </section>
+            <section id="sectionBotonPrint">
+                <button type="button" class="btn btn-primary" id="buttonBuscarAnadir">
+                    <mat-icon style="vertical-align: middle;">print</mat-icon> 
+                    Imprimir
+                </button>
+            </section>
+        </section>
+
+    <div id="PDfSec">
 
         <section style="height: 100%;">
             <iframe width="100%" height="100%" id="tagDataPdfMensual"></iframe>
         </section>
-    </div>
-    
+    </div>   
 </section>
 
