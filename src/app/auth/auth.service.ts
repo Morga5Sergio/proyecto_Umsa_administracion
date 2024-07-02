@@ -13,6 +13,8 @@ export class AuthService {
   private apiPokemon = "https://pokeapi.co/api/v2/pokemon/ditto"
   //private apiPokemon = "https://jsonplaceholder.typicode.com/todos/1"
   private apipostExample = "https://jsonplaceholder.typicode.com/posts"
+  private apiGetEmpleados = "http://127.0.0.1:8000/obtenerEmpleadosPrueba"
+  private apiCOnsultaDeDocentes = "http://127.0.0.1:8002/obtenerEmpleadosPrueba"
   constructor(private http: HttpClient) {}
 
   login(credentials: { username: string; password: string }): Observable<any> {
@@ -22,6 +24,12 @@ export class AuthService {
   isPokemon(): Observable<any>{
     return this.http.get(`${this.apiPokemon}`);
   }
+  
+  // TODO GET Ejemplo de servicio para obtener empleados
+  getObtenerEmpleados():Observable<any>{
+    return this.http.get(`${this.apiGetEmpleados}`);
+  }
+
   /* title: 'foo',
     body: 'bar',
     userId: 1, */

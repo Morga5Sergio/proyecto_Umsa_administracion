@@ -45,7 +45,8 @@ export class AuthComponent implements OnInit{
       console.log("Datos del credencial ", this.credentialsForm.value );
       // this.router.navigate(['/dashboard/administracion-lista', {id:"123"}]);
       this.router.navigate(['/dashboard/administracion-lista', "66666778"]);
-      this.authService.login(this.credentials).subscribe(
+
+      /* this.authService.login(this.credentials).subscribe(
         (response) => {
           
          console.log('credenciales correctos');
@@ -65,7 +66,7 @@ export class AuthComponent implements OnInit{
         
           // Maneja los errores, por ejemplo, muestra un mensaje de error al usuario.
         }
-      ); 
+      );  */
     }
     // this.router.navigate(['/dashboard']);
 
